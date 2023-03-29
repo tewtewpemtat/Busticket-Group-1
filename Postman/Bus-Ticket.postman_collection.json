@@ -1,0 +1,389 @@
+{
+	"info": {
+		"_postman_id": "94535571-d796-40a6-b277-a50c74ffafab",
+		"name": "Bus-Ticket",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Bus (200)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/bus",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"bus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Bus Ticket (200)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "         {\r\n          \"id\": 1,\r\n          \"name\": \"Busbin\",\r\n          \"direction\": \"พัทยา-กรุงเทพ\",\r\n          \"outtime\": \"22:00\",\r\n          \"price\": 800,\r\n          \"ticket\": 15\r\n         }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/bus",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"bus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Bus Ticket (404)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "         {\r\n          \"id\": 5,\r\n          \"name\": \"Busbin\",\r\n          \"direction\": \"พัทยา-กรุงเทพ\",\r\n          \"outtime\": \"22:00\",\r\n          \"price\": 800,\r\n          \"ticket\": 15\r\n         }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/bus",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"bus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Seat by BusID (200)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/seat/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"seat",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Seat by BusID (404)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/seat/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"seat",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Seat by ID (200)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "            {\r\n                \"seatid\": 100,\r\n                \"seatnumber\": 1,\r\n                \"status\": \"1\",\r\n                \"busid\": 1,\r\n                \"busname\": \"Busbin\"\r\n            }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/seat/100",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"seat",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Seat by ID (404)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "            {\r\n                \"seatid\": 100,\r\n                \"seatnumber\": 1,\r\n                \"status\": \"1\",\r\n                \"busid\": 1,\r\n                \"busname\": \"Busbin\"\r\n            }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/seat/200",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"seat",
+						"200"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Seat by ID (400)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "            {\r\n                \"seatid\": 100,\r\n                \"seatnumber\": 1,\r\n                \"status\": \"hello\",\r\n                \"busid\": 1,\r\n                \"busname\": \"Busbin\"\r\n            }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/seat/100",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"seat",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customer By ID (200)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/customer/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customer By ID (404)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/customer/8",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Customer (201)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "            {\r\n                \"id\": 5,\r\n                \"bus\": \"Busbin\",\r\n                \"seatnumber\": 6,\r\n                \"name\": \"Johncena\",\r\n                \"date\": \"2023-03-20\",\r\n                \"contact\": \"uuuuuu\"\r\n            }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/customer",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Customer (400)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "            {\r\n                \"id\": 5,\r\n                \"bus\": \"\",\r\n                \"seatnumber\": 6,\r\n                \"name\": \"test\",\r\n                \"date\": \"2023-03-20\",\r\n                \"contact\": \"\"\r\n            }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/customer",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Customer By ID (200)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/customer/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Customer By ID (404)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/customer/6",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"6"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
