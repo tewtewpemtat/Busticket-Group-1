@@ -1,0 +1,182 @@
+# Bus Ticket API
+
+### Bus [/bus]
+
+### Get all bus [GET]
+
++ Response 200 (application/json)
+
+            {
+                "id": 1,
+                "name": "Busbin",
+                "direction": "พัทยา-กรุงเทพ",
+                "outtime": "22:00",
+                "price": 800,
+                "ticket":20
+            },
+            {
+                "id": 2,
+                "name": "Busbong",
+                "direction": "พัทยา-สระบุรี",
+                "outtime": "14:00",
+                "price": 600,
+                "ticket":20
+            }
+        
+### Update bus ticket [PUT]
+
++ Request (application/json)
+
+         {
+          "id": 1,
+          "name": "Busbin",
+          "direction": "พัทยา-กรุงเทพ",
+          "outtime": "22:00",
+          "price": 800,
+          "ticket": 15
+         }
+
++ Response 200 (application/json)
+
+        {
+          "id": 1,
+          "name": "Busbin",
+          "direction": "พัทยา-กรุงเทพ",
+          "outtime": "22:00",
+          "price": 800,
+          "ticket": 15
+         }
+
++ Response 404 (application/json)
+
+        {
+        "message": "Bus ID invalid"
+        }
+
+## Seat [/seat/{id}]
+
+### Get seat [GET]
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "seatid": 100,
+                "seatnumber": 1,
+                "status": "1",
+                "busid": 1,
+                "busname": "Busbin"
+            }
+            
++ Response 404 (application/json)
+
+            {
+                "message": "No seat available"
+            }
+
+### Update seat status [PUT]
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "seatid": 100,
+                "seatnumber": 1,
+                "status": "0",
+                "busid": 1,
+                "busname": "Busbin"
+            }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "seatid": 100,
+                "seatnumber": 1,
+                "status": "0",
+                "busid": 1,
+                "busname": "Busbin"
+            }
+
++ Response 400 (application/json)
+
+            {
+                "message": "Seat status update failed"
+            }
+
++ Response 404 (application/json)
+
+            {
+                "message": "Seat ID Invaild"
+            }
+        
+## Customer [/customer]
+
+### Get Customer [GET/customer/{id}]
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": 2,
+                "bus": "Busbin",
+                "seatnumber": 6,
+                "name": "JonJack",
+                "date": "2023-03-20",
+                "contact": "0844758262"
+            }
+            
++ Response 404 (application/json)
+
+            {
+                "message": "Customer not found"
+            }
+            
+### Create Customer [POST]
+
++ Request (application/json)
+
+            {
+                "id": 3,
+                "bus": "Busbin",
+                "seatnumber": 6,
+                "name": "JonJack",
+                "date": "2023-03-20",
+                "contact": "0844758262"
+            }
+
++ Response 201 (application/json)
+
+            {
+                "id": 3,
+                "bus": "Busbin",
+                "seatnumber": 6,
+                "name": "JonJack",
+                "date": "2023-03-20",
+                "contact": "0844758262"
+            }
+
++ Response 400 (application/json)
+
+            {
+                "message": "Failed creating customer information"
+            }
+
+### Delete Customer [DELETE/customer/{id}]
+
++ Response 200 (application/json)
+
+            {
+            
+                "message": "Customer deleted"
+            }
+            
++ Response 404 (application/json)
+
+            {
+                "message": "No customer Found"
+            }
